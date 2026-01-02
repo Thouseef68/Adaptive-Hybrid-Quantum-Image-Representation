@@ -1,53 +1,84 @@
 # Implementation
 
-This folder will contain Qiskit-based simulation notebooks for implementing existing and proposed methods.
-Proposed Method: Adaptive Hybrid Quantum Image Representation (AHQIR)
-Motivation
+Implementation
+Platform and Tools
 
-Existing quantum image representation techniques use a single fixed encoding strategy for the entire image. This leads to inefficient use of quantum resources because different regions of an image do not require the same level of precision. High-detail regions need accurate encoding, while background or low-detail regions can be represented using simpler encodings.
+Platform: IBM Quantum
 
-To address this limitation, this project proposes a novel Adaptive Hybrid Quantum Image Representation (AHQIR).
+Quantum Framework: Qiskit
 
-Core Idea of AHQIR
+Programming Language: Python
 
-The key idea of AHQIR is to adaptively combine multiple quantum image representation techniques based on image characteristics.
+Simulation Type: Statevector and QASM simulators
 
-Adaptive Strategy
+Simulation-based implementation is used due to current quantum hardware limitations, which is standard practice in quantum image processing research.
 
-Low-detail regions → encoded using FRQI
+Implementation Strategy
+Step 1: Classical Preprocessing
 
-High-detail regions → encoded using reduced-bit NEQR
+Load medical or SAR image
 
-The encoded regions are combined into a single hybrid quantum image state
+Convert to grayscale
 
-This adaptive hybrid strategy reduces quantum resource usage while maintaining image accuracy.
+Normalize pixel values
 
-AHQIR Workflow (Aligned with Architecture)
+Resize image to 2×2 or 4×4
 
-Input classical grayscale image (medical or SAR)
+Step 2: Implementation of Existing Methods
+FRQI (Baseline Method)
 
-Perform classical preprocessing and region analysis
+Encode pixel positions using quantum superposition
 
-Select appropriate encoding strategy for each region
+Encode pixel intensity using rotation gates
 
-Construct hybrid quantum image representation
+Simulate quantum circuit
 
-Apply quantum image operations if required
+Record qubit count and circuit complexity
 
-Evaluate performance and compare with existing methods
+NEQR (Reduced Implementation)
 
-Advantages of AHQIR
+Encode pixel values in binary form
 
-Optimized qubit usage compared to NEQR
+Use fewer intensity qubits for reduced complexity
 
-Higher accuracy than FRQI
+Simulate and record resource usage
 
-Flexible and scalable representation
+Other methods (NAQSS, QUALPI, SQR) are studied theoretically and compared using literature-based metrics.
 
-Better support for quantum image operations
+Step 3: Implementation of Proposed AHQIR
 
-Suitable for simulation-based implementation
+Analyze image regions classically
 
-Novelty
+Apply FRQI encoding to low-detail regions
 
-The novelty of AHQIR lies in its adaptive and hybrid encoding mechanism, which dynamically selects quantum image representations instead of applying a single fixed method across the entire image.
+Apply reduced NEQR encoding to high-detail regions
+
+Combine encodings into a single hybrid quantum image state
+
+Simulate the hybrid circuit
+
+Step 4: Evaluation
+
+All methods are evaluated using the same input images and simulation environment.
+
+Evaluation Metrics:
+
+Number of qubits
+
+Gate complexity
+
+Circuit depth
+
+Reconstruction accuracy
+
+Output
+
+Quantum image state representation
+
+Comparative performance analysis between existing methods and AHQIR
+
+Demonstration of improved balance between accuracy and resource usage
+
+Summary
+
+The implementation follows a fair, simulation-based comparison framework, ensuring that improvements observed in AHQIR are due to the adaptive hybrid strategy rather than differences in input or platform.
