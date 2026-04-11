@@ -30,9 +30,9 @@ The goal is to reduce circuit complexity while improving representation efficien
 
 ## 📊 Current Status
 - ✅ Architecture Design — Completed  
-- 🔄 Literature Review — In Progress  
-- ⏳ Implementation — Planned  
-- ⏳ Evaluation — Planned  
+- 🔄 Literature Review — Completed
+- ⏳ Implementation — Completed 
+- ⏳ Evaluation — Completed 
 
 ---
 
